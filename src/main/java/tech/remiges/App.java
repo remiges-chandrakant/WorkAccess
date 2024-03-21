@@ -15,4 +15,10 @@ public class App {
     public String getName() {
         return "Deepak";
     }
+    
+    //Code by Shivendra
+    public String getName(){
+      return "Shivendra";
+    }
 }
+
