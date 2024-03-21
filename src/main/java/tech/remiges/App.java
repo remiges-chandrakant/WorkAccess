@@ -11,4 +11,8 @@ public class App {
         System.out.println("please change line or add new line");
 
     }
+
+    public String getName() {
+        return "Deepak";
+    }
 }
