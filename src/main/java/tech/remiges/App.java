@@ -10,7 +10,12 @@ public class App {
         System.out.println("you can change code and then commit.");
         System.out.println("please change line or add new line");
         System.out.println("Code changed by Suraj");
+
         System.out.println("Code2 changed by Suraj");
+
+        System.out.println("hello developer");
+        
+
 
     }
 
@@ -22,5 +27,8 @@ public class App {
     public String getName(){
       return "Shivendra";
     }
+    
+    public int getName(){
+    return 3;
 }
 
