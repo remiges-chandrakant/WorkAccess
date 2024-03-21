@@ -17,9 +17,6 @@ public class App {
         return "Deepak";
     }
     
-    //Code by Shivendra
-    public String getName(){
-      return "Shivendra";
-    }
+   
 }
 
