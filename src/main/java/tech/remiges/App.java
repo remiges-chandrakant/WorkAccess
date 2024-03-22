@@ -11,4 +11,12 @@ public class App {
         System.out.println("please change line or add new line");
 
     }
+
+    public String sayHello() {
+        return "Good Morning Deepak!";
+    }
+
+    public int luckyNum() {
+        return 7;
+    }
 }
