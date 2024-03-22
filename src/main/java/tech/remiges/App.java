@@ -30,6 +30,6 @@ public class App {
     }
     
     public int getName(){
-    return 3;
+    return "Suraj";
 }
 }
