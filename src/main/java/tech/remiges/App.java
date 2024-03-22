@@ -16,7 +16,8 @@ public class App {
         return "Good Morning Deepak!";
     }
 
-    public int luckyNum() {
-        return 7;
+    public int sum() {
+        return 5;
     }
+
 }
