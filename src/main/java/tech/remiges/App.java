@@ -11,7 +11,11 @@ public class App {
         System.out.println("please change line or add new line");
         System.out.println("Code changed by Suraj");
 
+        System.out.println("Code2 changed by Suraj!!!!");
+
+
         System.out.println("Code2 changed by Suraj");
+
 
         System.out.println("hello developer");
         System.out.println("Reshma");
@@ -29,7 +33,7 @@ public class App {
       return "Shivendra";
     }
     
-    public int getName(){
-    return 3;
+    public String getName(){
+    return "Suraj";
 }
 }
