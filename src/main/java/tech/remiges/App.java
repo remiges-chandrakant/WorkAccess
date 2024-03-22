@@ -14,22 +14,25 @@ public class App {
         System.out.println("Code2 changed by Suraj");
 
         System.out.println("hello developer");
-        System.out.println("Reshma");
         
 
 
     }
 
-    public String getName1() {
+    public String getName() {
         return "Deepak";
     }
     
+
     //Code by Shivendra
-    public String getName2(){
+    public String getName(){
       return "Shivendra";
     }
     
     public int getName(){
     return 3;
+
+   
+
 }
-}
+
