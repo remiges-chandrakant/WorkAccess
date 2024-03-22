@@ -14,8 +14,13 @@ public class App {
         System.out.println("Code2 changed by Suraj");
 
         System.out.println("hello developer");
+
         System.out.println("Reshma");
         System.out.println("Yogesh");
+
+
+        System.out.println("hi Rajesh ");
+        
 
 
     }
@@ -29,7 +34,14 @@ public class App {
       return "Shivendra";
     }
     
-    public int getName(){
+    public String getName(){
     return "Suraj";
+
 }
 }
+    
+    
+    
+    
+
+
