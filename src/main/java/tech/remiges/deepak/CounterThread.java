@@ -1,25 +1,26 @@
 package tech.remiges.deepak;
 
-public class CounterThread extends Thread {
-    private final SharedResource sharedResource;
+import java.util.concurrent.BlockingQueue;
 
-    public CounterThread(SharedResource sharedResource) {
-        this.sharedResource = sharedResource;
+public class CounterThread implements Runnable {
+    private final BlockingQueue<String> queue;
+
+    public CounterThread(BlockingQueue<String> queue) {
+        this.queue = queue;
     }
 
     @Override
     public void run() {
         try {
             while (true) {
-                synchronized (sharedResource.lines) {
-                    if (sharedResource.lines.isEmpty()) {
-                        sharedResource.lines.wait(); // Wait for lines to be added
-                    } else {
-                        String line = sharedResource.lines.remove(0);
-                        int wordCount = line.split("\\s+").length;
-                        System.out.println("Words counted: " + wordCount + " in line: " + line);
-                    }
+                String line = queue.take();
+                if ("EOF".equals(line)) {
+                    queue.put("EOF"); // Put it back for other counters to see
+                    break;
                 }
+                int wordCount = line.split("\\s+").length;
+                System.out.println(
+                        Thread.currentThread().getName() + " counted " + wordCount + " words in line: " + line);
             }
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();

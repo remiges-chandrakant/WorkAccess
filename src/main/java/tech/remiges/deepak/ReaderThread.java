@@ -3,15 +3,15 @@ package tech.remiges.deepak;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.concurrent.BlockingQueue;
 
-public class ReaderThread extends Thread {
+public class ReaderThread implements Runnable {
     private final String filePath;
-    private final SharedResource sharedResource;
+    private final BlockingQueue<String> queue;
 
-    // constructor
-    public ReaderThread(String filePath, SharedResource sharedResource) {
+    public ReaderThread(String filePath, BlockingQueue<String> queue) {
         this.filePath = filePath;
-        this.sharedResource = sharedResource;
+        this.queue = queue;
     }
 
     @Override
@@ -19,13 +19,11 @@ public class ReaderThread extends Thread {
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                synchronized (sharedResource.lines) {
-                    sharedResource.lines.add(line);
-                    sharedResource.lines.notify(); // Notify counter thread
-                }
+                queue.put(line); // This will block if the queue is full
             }
-        } catch (IOException e) {
-            e.printStackTrace();
+            queue.put("EOF"); // Indicates the end of file
+        } catch (IOException | InterruptedException e) {
+            Thread.currentThread().interrupt();
         }
     }
 }
