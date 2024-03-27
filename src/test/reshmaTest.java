@@ -5,6 +5,7 @@ public class reshmaTest {
         System.out.println("helloooooooooo");
 
         System.out.println("Tuesday 26 march");
+        System.out.println("27 march wed");
     }
     
 }
