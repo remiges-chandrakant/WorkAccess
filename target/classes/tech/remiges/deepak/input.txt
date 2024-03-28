@@ -1,0 +1,9 @@
+Hello 
+I am Deepak Kumar
+Spring boot developer
+
+We're back to the initial state of the file at the point of the specified commit. All changes that were made to the file after that commit were deleted. When we check the commit log, we'll have just the first commit.
+
+While this seems like something cool to do, you should be careful when using this command. Especially when you're working with a team.
+
+If you undo a commit and delete every file change that came after it, you might lose important changes made to your code by you and other teammates. This will also change the commit history of your project.
