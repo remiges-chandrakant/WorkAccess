@@ -61,4 +61,10 @@ public class App {
         return "Suraj";
 
     }
+    
+    //Code by Shivendra
+    public String getName(){
+      return "Shivendra";
+    }
 }
+
